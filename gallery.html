@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/g.png" type="image/x-icon">
+    <!-- HTML Meta Tags -->
+<title>iFernMalou Website</title>
+<meta name="description" content="WANT TO KNOW THE SECRET OF SUCCESS?!
+Click to inquire!">
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://www.ifernmalou.site">
+<meta property="og:type" content="website">
+<meta property="og:title" content="iFernMalou Website">
+<meta property="og:description" content="WANT TO KNOW THE SECRET OF SUCCESS?!
+Click to inquire!">
+<meta property="og:image" content="https://opengraph.b-cdn.net/production/images/9d7b79a4-4c7d-4dfd-b76b-dbc8df15eec1.png?token=cHsKtFo41kdSRlCCuym7K1xQOPKFR7Z6E6o_ixoCCWs&height=660&width=1171&expires=33263766637">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="ifernmalou.site">
+<meta property="twitter:url" content="https://www.ifernmalou.site">
+<meta name="twitter:title" content="iFernMalou Website">
+<meta name="twitter:description" content="WANT TO KNOW THE SECRET OF SUCCESS?!
+Click to inquire!">
+<meta name="twitter:image" content="https://opengraph.b-cdn.net/production/images/9d7b79a4-4c7d-4dfd-b76b-dbc8df15eec1.png?token=cHsKtFo41kdSRlCCuym7K1xQOPKFR7Z6E6o_ixoCCWs&height=660&width=1171&expires=33263766637">
+
+<!-- Meta Tags Generated via https://www.opengraph.xyz -->
+    <title>iFernMalou Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Gallery Styles */
+        .gallery {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px; /* Space between images */
+        }
+
+        .gallery-grid img {
+            width: 100%; /* Make images responsive */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 5px; /* Optional: Add rounded corners */
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.1); /* Zoom effect on hover */
+        }
+
+        /* Modal styles */
+        .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.9); 
+    padding-top: 60px;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%; 
+    max-width: 500px; 
+    position: relative; /* Para sa positioning ng close button */
+    top: 50%;
+    transform: translateY(-55%); /* Center vertically */
+}
+
+
+        #caption {
+            margin: auto;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 80%;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            color: white;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Carousel styles */
+        .carousel {
+            position: relative;
+            max-width: 600px; 
+            margin: auto;
+        }
+
+        button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 10;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Smaller columns for mobile */
+            }
+            .modal-content {
+                width: 90%; /* Make modal image width responsive */
+            }
+        }
+        
+        @media (max-width: 800px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Adjust for tablet */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="./images/x-icon.png" alt="iFernMalou Logo" style="height: 120px;">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="opportunities.html">Opportunities</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="gallery">
+        <h1>Gallery</h1>
+        <div class="gallery-grid">
+            <img src="./images/2024_04_21_16_35_IMG_6404.JPG" alt="Image 2" onclick="openModal(this, 1)">
+            <img src="./images/2024_04_26_19_08_IMG_6435.JPG" alt="Image 1" onclick="openModal(this, 0)">
+            <img src="./images/2024_04_21_16_35_IMG_6402.JPG" alt="Image 3" onclick="openModal(this, 2)">
+            <img src="./images/2024_04_21_13_08_IMG_6385.JPG" alt="Image 4" onclick="openModal(this, 3)">
+            <img src="./images/2024_04_21_12_47_IMG_6378.JPG" alt="Image 5" onclick="openModal(this, 4)">
+            <img src="./images/2024_04_21_12_40_IMG_6373.JPG" alt="Image 6" onclick="openModal(this, 5)">
+            <img src="./images/2024_04_21_12_18_IMG_6352.JPG" alt="Image 7" onclick="openModal(this, 6)">
+            <img src="./images/2024_03_24_16_50_IMG_6087.JPG" alt="Image 9" onclick="openModal(this, 8)">            
+            <img src="./images/eo.png" alt="Image 10" onclick="openModal(this, 9)">
+            <img src="./images/2024_03_24_16_27_IMG_6083.JPG" alt="Image 11" onclick="openModal(this, 10)">
+            <img src="./images/2024_03_24_16_26_IMG_6080.JPG" alt="Image 12" onclick="openModal(this, 11)">
+            <img src="./images/2024_03_24_16_26_IMG_6079.JPG" alt="Image 13" onclick="openModal(this, 12)">
+            <img src="./images/2024_03_24_16_26_IMG_6078.JPG" alt="Image 14" onclick="openModal(this, 13)">
+            <img src="./images/2024_03_24_16_25_IMG_6077.JPG" alt="Image 15" onclick="openModal(this, 14)">
+            <img src="./images/2024_03_24_11_38_IMG_6055.JPG" alt="Image 16" onclick="openModal(this, 15)">
+            <img src="./images/2024_03_24_20_33_IMG_6100.JPG" alt="Image 17" onclick="openModal(this, 16)">
+            <img src="./images/uu.png" alt="Image 18" onclick="openModal(this, 17)">
+            <img src="./images/mp.jpg" alt="Image 19" onclick="openModal(this, 18)">
+            <img src="./images/mpp.jpg" alt="Image 20" onclick="openModal(this, 19)">
+            <img src="./images/mh.png" alt="Image 21" onclick="openModal(this, 20)">
+            <img src="./images/ei.png" alt="Image 8" onclick="openModal(this, 7)">
+        </div>
+    </section>
+
+    <!-- Modal for displaying images -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+        <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+        <button class="next" onclick="changeImage(1)">&#10095;</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 iFern Malou. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let currentIndex = 0; // Current index of the displayed image
+        const images = []; // Array to store image sources
+
+        // Function to open modal and display clicked image
+        function openModal(img, index) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImage");
+            const captionText = document.getElementById("caption");
+            modal.style.display = "block";
+            modalImg.src = img.src; // Get the image source
+            captionText.innerHTML = img.alt; // Set the caption
+            currentIndex = index; // Set current index
+            images.length = 0; // Reset images array
+            // Add all image sources to the array
+            const galleryImages = document.querySelectorAll('.gallery-grid img');
+            galleryImages.forEach((image) => {
+                images.push(image.src);
+            });
+        }
+
+        // Function to change the displayed image
+        function changeImage(direction) {
+    currentIndex += direction;
+    if (currentIndex < 0) {
+        currentIndex = images.length - 1; // Loop to last image
+    } else if (currentIndex >= images.length) {
+        currentIndex = 0; // Loop to first image
+    }
+    const modalImg = document.getElementById("modalImage");
+    const captionText = document.getElementById("caption");
+    modalImg.src = images[currentIndex];
+    captionText.innerHTML = ''; // Wala nang caption
+}
+
+
+        // Function to close modal
+        function closeModal() {
+            const modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+        }
+
+        // Prevent right-click
+        document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+        // Disable certain keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            // Disable F12, Ctrl+Shift+I, Ctrl+U
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.ctrlKey && e.key === 'U')) {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

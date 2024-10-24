@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/g.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- HTML Meta Tags -->
+<title>iFernMalou Website</title>
+<meta name="description" content="WANT TO KNOW THE SECRET OF SUCCESS?!
+Click to inquire!">
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://www.ifernmalou.site">
+<meta property="og:type" content="website">
+<meta property="og:title" content="iFernMalou Website">
+<meta property="og:description" content="WANT TO KNOW THE SECRET OF SUCCESS?!
+Click to inquire!">
+<meta property="og:image" content="https://opengraph.b-cdn.net/production/images/9d7b79a4-4c7d-4dfd-b76b-dbc8df15eec1.png?token=cHsKtFo41kdSRlCCuym7K1xQOPKFR7Z6E6o_ixoCCWs&height=660&width=1171&expires=33263766637">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="ifernmalou.site">
+<meta property="twitter:url" content="https://www.ifernmalou.site">
+<meta name="twitter:title" content="iFernMalou Website">
+<meta name="twitter:description" content="WANT TO KNOW THE SECRET OF SUCCESS?!
+Click to inquire!">
+<meta name="twitter:image" content="https://opengraph.b-cdn.net/production/images/9d7b79a4-4c7d-4dfd-b76b-dbc8df15eec1.png?token=cHsKtFo41kdSRlCCuym7K1xQOPKFR7Z6E6o_ixoCCWs&height=660&width=1171&expires=33263766637">
+
+<!-- Meta Tags Generated via https://www.opengraph.xyz -->
+    <title>iFernMalou Website</title>
+    <audio id="background-audio" loop>
+        <source src="./audios/I-FERN Sizzle- Wealthcome Home (SDE).mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <button id="play-button">Play Music</button>
+
+    <script>
+        const audio = document.getElementById("background-audio");
+        const playButton = document.getElementById("play-button");
+    
+        // Play the audio when the button is clicked
+        playButton.addEventListener("click", () => {
+            audio.play();
+            playButton.style.display = "none"; // Hide button after playing
+        });
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("DzwLzWUIcncK-SKnX"); // Replace with your actual User ID
+        })();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('background-audio').volume = 0.1; // Set volume to 10%
+        });
+
+        function sendEmail() {
+            const form = document.forms[0]; // Access the first form in the document
+            const templateParams = {
+                from_name: form.name.value,
+                subject: "New Inquiry from " + form.name.value,
+                reply_to: form.email.value,
+                phone: form.phone.value,
+                message: form.message.value
+            };
+
+            emailjs.send('service_69128bc', 'template_g6es0vw', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    swal("Iferntastic!", "Your message was sent successfully!", "success");
+                    form.reset(); // Reset form on success
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    swal("Oops!", "Failed to send message. Please try again.", "error");
+                });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="./images/x-icon.png" alt="iFernMalou Logo" style="height: 120px;">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="opportunities.html">Opportunities</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Join i-Fern for a prosperous future</h1>
+                <p>Become a distributor and transform lives today with effective supplements and business opportunities.</p>
+            </div>
+            <div class="hero-form">
+                <form onsubmit="sendEmail(); return false;">
+                    <input type="text" name="name" placeholder="Enter Your Name" required>
+                    <input type="email" name="email" placeholder="Enter Your Email Address" required>
+                    <input type="tel" name="phone" placeholder="Phone number" required>
+                    <textarea name="message" placeholder="Your Message Here" required></textarea>
+                    <button type="submit" class="button">Submit Inquiry</button>
+                </form>
+            </section> 
+            <div class="snowflakes" aria-hidden="true">
+                <div class="snowflake">❄</div>
+                <div class="snowflake">❄</div>
+            </div>
+            
+            </div>
+        </div>
+    </section>  
+    <footer>
+        <p>&copy; 2024 iFern Malou. All rights reserved.</p>
+    </footer>
+    <script>
+        // Prevent right-click
+        document.addEventListener('contextmenu', (e) => e.preventDefault());
+        
+        // Disable certain keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            // Disable F12, Ctrl+Shift+I, Ctrl+U
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.ctrlKey && e.key === 'U')) {
+                e.preventDefault();
+            }
+        });
+
+        // Function to create snowflakes
+        const createSnowflake = () => {
+            const snowflake = document.createElement("div");
+            snowflake.className = "snowflake";
+            snowflake.innerHTML = "❄"; // Snowflake character
+    
+            // Set random position and animation duration
+            snowflake.style.left = Math.random() * window.innerWidth + "px";
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + "s"; // Random duration between 2s and 5s
+            document.querySelector(".snowflakes").appendChild(snowflake);
+    
+            // Remove snowflake after falling
+            snowflake.addEventListener("animationend", () => {
+                snowflake.remove();
+            });
+        };
+
+    </script>
+    
+</body>
+</html>
